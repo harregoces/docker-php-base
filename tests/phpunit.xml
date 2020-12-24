@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="true" backupStaticAttributes="false" cacheResult="false" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" forceCoversAnnotation="false" printerClass="PHPUnitTextUIResultPrinter" processIsolation="false" stopOnError="false" stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false" stopOnRisky="false" timeoutForSmallTests="1" timeoutForMediumTests="10" timeoutForLargeTests="60" verbose="false" stderr="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory suffix=".php">../../</directory>
+    </include>
+    <exclude>
+      <directory>../tests</directory>
+    </exclude>
+  </coverage>
+  <testsuites>
+    <testsuite name="Docker PHP Base">
+      <directory suffix="Test.php">./tests</directory>
+    </testsuite>
+  </testsuites>
+  <!-- uncomment this lines for generate reports -->
+  <!-- logging>
+    <log type="coverage-html" target="./html"/>
+    <log type="coverage-xml" target="./report/xml"/>
+    <log type="coverage-clover" target="./report/coverage.clover.xml"/>
+    <log type="coverage-crap4j" target="./report/coverage.crap4j.xml"/>
+    <log type="coverage-php" target="./report/coverage.serialized.php"/>
+    <log type="junit" target="./report/logfile.xml"/>
+    <log type="teamcity" target="./report/teamcity.txt"/>
+    <log type="testdox-html" target="./report/testdox.html"/>
+    <log type="testdox-text" target="./report/testdox.txt"/>
+    <log type="testdox-xml" target="./report/testdox.xml"/>
+  </logging -->
+</phpunit>

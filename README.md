@@ -1,2 +1,2 @@
-# docker-php-base
-This is a php base project with PHPUnit, Docker, Composer and Mysql ready for work 
+# Docker PHP Base
+This is a PHP base project with PHPUNIT, Docker, Composer and Mysql ready for work. 

@@ -1,0 +1,46 @@
+version: '3.2'
+
+services:
+
+  php:
+    container_name: base.web
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - database
+    networks:
+      app-tier:
+        aliases:
+          - web
+    volumes:
+      - ./src:/var/www/html
+
+  database:
+    image: mysql:latest
+    container_name: base.database
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./docker/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: 'myDatabaseUser'
+      MYSQL_PASSWORD: 'myDatabasePassword'
+      MYSQL_DATABASE: 'test'
+      MYSQL_PORT: 3306
+      MYSQL_ROOT_PASSWORD: 'MyDatabaseRootPassword'
+    networks:
+      app-tier:
+        aliases:
+          - database
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  dbdata:
